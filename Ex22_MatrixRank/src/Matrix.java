@@ -52,31 +52,25 @@ public class Matrix {
     }
 
     public void switchRows(int row1, int row2){
-        double[] temp1 = A[row1];
-        double[] temp2 = A[row2];
+        double[] temp = A[row1];
 
-        A[row1] = temp2;
-        A[row2] = temp1;
+        A[row1] = A[row2];
+        A[row2] = temp;
     }
 
     public void switchCols(int col1, int col2) {
 
         for(double[] row: A){
-            double temp1 = row[col1];
-            double temp2 = row[col2];
+            double temp = row[col1];
 
-            row[col1] = temp2;
-            row[col2] = temp1;
+            row[col1] = row[col2];
+            row[col2] = temp;
 
         }
-
-
-
     }
 
     public Matrix toTriangularMatrix(Matrix A) {
         return (A);
-
     }
 
     public String toString() {
@@ -89,7 +83,7 @@ public class Matrix {
             for (int col = 0; col < A[row].length; col++) {
                 matrix.append(String.format("%5.3f  ", A[row][col]));
             }
-            matrix.append(String.format("%n")); // Supplies platform specific linebreak, wheres \n always produces \u000A
+            matrix.append(String.format("%n")); // Produces platform specific linebreak, wheres \n always produces \u000A
         }
 
         return (matrix.toString());
@@ -106,7 +100,7 @@ public class Matrix {
             for (int col = 0; col < A[row].length; col++) {
                 matrix.append(String.format(format, A[row][col]));
             }
-            matrix.append(String.format("%n")); // Supplies platform specific linebreak, wheres \n always produces \u000A
+            matrix.append(String.format("%n"));
         }
 
         return (matrix.toString());
