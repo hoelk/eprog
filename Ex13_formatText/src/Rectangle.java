@@ -17,7 +17,7 @@ public class Rectangle {
     // Default constructor
 
     Rectangle() {
-        topLeftCornerX = 0; // "this" is used since method variables have same name as instance variables
+        topLeftCornerX = 0;
         topLeftCornerY = 0;
         width = 0;
         height = 0;
