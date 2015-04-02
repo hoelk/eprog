@@ -4,17 +4,33 @@
 public class Main {
     public static void main(String[] args) {
         Matrix null10x10 = new Matrix(10, 10);
-        Matrix unit10x10 = new Matrix(5, 5, 1);
+        Matrix unit5x5 = new Matrix(5, 5, 1);
 
         System.out.println(null10x10.toString());
-        System.out.println(unit10x10.toString());
-        System.out.println(unit10x10.toString(0));
+        System.out.println(unit5x5.toString());
+        System.out.println(unit5x5.toString(0));
 
-        unit10x10.switchRows(1,2);
-        System.out.println(unit10x10.toString(0));
+        unit5x5.switchRows(1,2);
+        System.out.println(unit5x5.toString(0));
 
-        unit10x10.switchCols(2,3);
-        System.out.println(unit10x10.toString(0));
+        unit5x5.switchCols(2, 3);
+        System.out.println(unit5x5.toString(0));
+
+        double[] replace5 = {1, 2, 3, 4, 5};
+        double[] replace3 = {9, 8, 7};
+
+        System.out.println(unit5x5.toString(0));
+
+        Matrix unit3x5 = new Matrix(3,5,1);
+
+        System.out.println(unit3x5.toString(0));
+
+        unit3x5.setRow(2, replace5);
+        unit3x5.setCol(4, replace3);
+
+        System.out.println(unit3x5.toString(0));
+
+
 
     }
 }

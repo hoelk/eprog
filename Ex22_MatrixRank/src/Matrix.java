@@ -1,6 +1,12 @@
 /**
- * Created by hoelk on 19.03.15.
+ * Created by Stefan Fleck on 19.03.15.
  */
+
+import com.sun.org.apache.xpath.internal.SourceTree;
+
+import java.io.*;
+import java.lang.reflect.Array;
+
 public class Matrix {
     public static int numberOfMatrices;
     private final int id;
@@ -38,12 +44,35 @@ public class Matrix {
     }
 
 
-    private int getRows() {
-        return (A.length);
+    public void setRow(int row, double[] new_row) {
 
+        if (row > A.length) {
+            System.out.println("Zeilenindex zu groß");
+        } else if (new_row.length != A[0].length) {
+            System.out.println("Länge der neuen Zeile nicht gleich Länge der alten Zeile");
+        } else {
+            A[row] = new_row;
+        }
     }
 
-    private int getCols() {
+    public void setCol(int col, double[] new_col) {
+
+        if (col > A[0].length) {
+            System.out.println("Spaltenindex zu groß");
+        } else if (new_col.length != A.length) {
+            System.out.println("Länge der neuen Spalte nicht gleich Länge der alten Spalte");
+        } else {
+            for (int row = 0; row < A.length; row++) {
+                A[row][col] = new_col[row];
+            }
+        }
+    }
+
+    public int getRows() {
+        return (A.length);
+    }
+
+    public int getCols() {
         return (A[0].length);
     }
 
@@ -51,7 +80,7 @@ public class Matrix {
         return (id);
     }
 
-    public void switchRows(int row1, int row2){
+    public void switchRows(int row1, int row2) {
         double[] temp = A[row1];
 
         A[row1] = A[row2];
@@ -60,7 +89,7 @@ public class Matrix {
 
     public void switchCols(int col1, int col2) {
 
-        for(double[] row: A){
+        for (double[] row : A) {
             double temp = row[col1];
 
             row[col1] = row[col2];
@@ -108,3 +137,4 @@ public class Matrix {
 
 
 }
+
