@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Ex11_and_2_checkDate_Funktionstabelle/Ex11_and_2_checkDate_Funktionstabelle.iml" filepath="$PROJECT_DIR$/Ex11_and_2_checkDate_Funktionstabelle/Ex11_and_2_checkDate_Funktionstabelle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex13_formatText/Ex13_formatText.iml" filepath="$PROJECT_DIR$/Ex13_formatText/Ex13_formatText.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex14_Golomb-Lineal/Ex14_Golomb-Lineal.iml" filepath="$PROJECT_DIR$/Ex14_Golomb-Lineal/Ex14_Golomb-Lineal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex22_MatrixRank/Ex22_MatrixRank.iml" filepath="$PROJECT_DIR$/Ex22_MatrixRank/Ex22_MatrixRank.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ExX_Sandbox/ExX_Sandbox.iml" filepath="$PROJECT_DIR$/ExX_Sandbox/ExX_Sandbox.iml" />
+    </modules>
+  </component>
+</project>
