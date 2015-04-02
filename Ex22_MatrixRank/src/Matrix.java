@@ -51,11 +51,26 @@ public class Matrix {
         return (id);
     }
 
-    private void switchRows(int m1, int m2) {
+    public void switchRows(int row1, int row2){
+        double[] temp1 = A[row1];
+        double[] temp2 = A[row2];
 
+        A[row1] = temp2;
+        A[row2] = temp1;
     }
 
-    private void switchCols(int n1, int n2) {
+    public void switchCols(int col1, int col2) {
+
+        for(double[] row: A){
+            double temp1 = row[col1];
+            double temp2 = row[col2];
+
+            row[col1] = temp2;
+            row[col2] = temp1;
+
+        }
+
+
 
     }
 
