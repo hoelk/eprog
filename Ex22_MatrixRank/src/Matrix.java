@@ -1,11 +1,8 @@
 /**
  * Created by Stefan Fleck on 19.03.15.
  */
-
-import com.sun.org.apache.xpath.internal.SourceTree;
-
 import java.io.*;
-import java.lang.reflect.Array;
+
 
 public class Matrix {
     public static int numberOfMatrices;
@@ -41,6 +38,42 @@ public class Matrix {
                 }
             }
         }
+    }
+
+    public static Matrix parseMatrixFile(String path) throws IOException {
+
+        FileInputStream istream = new FileInputStream(path);
+        InputStreamReader reader = new InputStreamReader(istream);
+        BufferedReader input = new BufferedReader(reader);
+
+
+        // Erste Zeile lesen (enthält Zeilen- und Spaltenzahl)
+        String line = input.readLine();
+        String[] elem = line.split(" ");
+        int rows = Integer.parseInt(elem[0]);
+        int cols = Integer.parseInt(elem[1]);
+
+        // Restliche Zeilen lesen
+        Matrix res = new Matrix(rows, cols);
+
+        for (int row = 0; row < rows; row++) {
+            line = input.readLine();
+            elem = line.split(" ");
+
+            for (int col = 0; col < cols; col++) {
+               res.setElement(row, col, Double.parseDouble(elem[col]));
+            }
+        }
+
+        input.close();
+
+        return (res);
+
+    }
+
+
+    public void setElement(int row, int col, double value) {
+        A[row][col]=value;
     }
 
 

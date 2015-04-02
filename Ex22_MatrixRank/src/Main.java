@@ -1,8 +1,10 @@
+import java.io.IOException;
+
 /**
  * Created by hoelk on 02.04.15.
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         Matrix null10x10 = new Matrix(10, 10);
         Matrix unit5x5 = new Matrix(5, 5, 1);
 
@@ -30,6 +32,11 @@ public class Main {
 
         System.out.println(unit3x5.toString(0));
 
+        Matrix parse1 = Matrix.parseMatrixFile("/home/hoelk/Dropbox/workspace/java/eprog/Ex22_MatrixRank/src/test_1");
+        Matrix parse2 = Matrix.parseMatrixFile("/home/hoelk/Dropbox/workspace/java/eprog/Ex22_MatrixRank/src/test_2");
+
+        System.out.println(parse1.toString());
+        System.out.println(parse2.toString());
 
 
     }
