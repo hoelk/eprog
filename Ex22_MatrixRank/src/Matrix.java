@@ -180,11 +180,40 @@ public class Matrix {
         return maxcol;
     }
 
+    public int getPosColWithMax(int start_col) {
+
+        double max = getColMax(start_col);
+        int maxcol = 0;
+
+        for (int col = start_col; col < A[0].length; col++) {
+            double newmax = Math.max(getColMax(col), max);
+            if (newmax > max) {
+                maxcol = col;
+                max = newmax;
+            }
+        }
+        return maxcol;
+    }
+
     public int getPosRowWithMax() {
         double max = getRowMax(0);
         int maxrow = 0;
 
         for (int row = 0; row < A.length; row++) {
+            double newmax = Math.max(getRowMax(row), max);
+            if (newmax > max) {
+                maxrow = row;
+                max = newmax;
+            }
+        }
+        return maxrow;
+    }
+
+    public int getPosRowWithMax(int start_row) {
+        double max = getRowMax(start_row);
+        int maxrow = 0;
+
+        for (int row = start_row; row < A.length; row++) {
             double newmax = Math.max(getRowMax(row), max);
             if (newmax > max) {
                 maxrow = row;
@@ -212,7 +241,6 @@ public class Matrix {
 
             row[col1] = row[col2];
             row[col2] = temp;
-
         }
     }
 
@@ -229,11 +257,14 @@ public class Matrix {
         }
     }
 
-    public Matrix makeTriangular(Matrix X) {
-        Matrix B = new Matrix(X);
+    public void makeTriangular() {
+        Matrix B = this;
 
+        B.switchRows(0, B.getPosRowWithMax());
+        B.switchCols(0, B.getPosColWithMax());
 
-        return (B);
+        System.out.println(B);
+        System.out.println(this);
 
 
     }

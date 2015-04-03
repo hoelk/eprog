@@ -109,6 +109,23 @@ public class Main {
         test1.rowTimesScalar(3, 40);
         System.out.println(test1.toString());
 
+        System.out.println("Make Triangular");
+        System.out.println(test3.toString());
+        test3.makeTriangular();
+
+
+        System.out.println("-- test4");
+        System.out.println(test4.toString());
+        System.out.println("Max Row: " + test4.getPosRowWithMax());
+        System.out.println("Max Col: " + test4.getPosColWithMax());
+        System.out.println("Max Row: " + test4.getPosRowWithMax(1));
+        System.out.println("Max Col: " + test4.getPosColWithMax(1));
+        System.out.println("Max Row: " + test4.getPosRowWithMax(2));
+        System.out.println("Max Col: " + test4.getPosColWithMax(2));
+        System.out.println("Max Row: " + test4.getPosColWithMax(3));
+
+
+
 
 
     }
