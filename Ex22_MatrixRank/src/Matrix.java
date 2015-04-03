@@ -8,8 +8,8 @@ import java.io.*;
 public class Matrix {
     public static int numberOfMatrices;
     private final int id;
-    private double[][] A;  // [row][col]
     private final int diagDim;
+    private double[][] A;  // [row][col]
 
     // Custom constructor
     Matrix(int rows, int cols) {
@@ -33,8 +33,7 @@ public class Matrix {
         diagDim = Math.min(a.length, a[0].length);
         A = a;
 
-        }
-
+    }
 
     // Custom constructor for easy diagonal matrices
     Matrix(int rows, int cols, int diagEl) {
@@ -79,7 +78,6 @@ public class Matrix {
             A[row] = B.A[row].clone();
         }
     }
-
 
 
     public static Matrix parseMatrixFile(String path) throws IOException {
@@ -141,12 +139,20 @@ public class Matrix {
         }
     }
 
+    public int getId() {
+        return (id);
+    }
+
     public int getRows() {
         return (A.length);
     }
 
     public int getCols() {
         return (A[0].length);
+    }
+
+    public double[][] getArray() {
+        return (A);
     }
 
     private int getPosAbsRowMax(int row, int fromcol) {
@@ -187,10 +193,6 @@ public class Matrix {
         return (max);
     }
 
-    public double[][] getArray() {
-        return (A);
-    }
-
     private double getAbsRowMax(int row, int fromcol) {
         double max = Math.abs(A[row][fromcol]);
 
@@ -219,10 +221,6 @@ public class Matrix {
             }
         }
 
-    }
-
-    public int getId() {
-        return (id);
     }
 
     public void switchRows(int row1, int row2) {
@@ -256,43 +254,42 @@ public class Matrix {
     }
 
     public void triangularise() {
-        int diagDim = Math.min(A.length, A[0].length);
 
         for (int diagEl = 0; diagEl < diagDim; diagEl++) {
             makeTopLeftCornerNotZero(diagEl);
 
-                for (int row = diagEl+1; row < A.length; row++) {
+            for (int row = diagEl + 1; row < A.length; row++) {
 
-                    if (A[row][diagEl] != 0) {
-                        double a = A[diagEl][diagEl];
-                        double b = A[row][diagEl];
-                        rowTimesScalar(row, a);
-                        rowTimesScalar(diagEl, b);
+                if (A[row][diagEl] != 0) {
+                    double a = A[diagEl][diagEl];
+                    double b = A[row][diagEl];
+                    rowTimesScalar(row, a);
+                    rowTimesScalar(diagEl, b);
 
-                        double c = A[row][diagEl]; // Damit die Zahlen nicht zu gross werden
+                    double c = A[row][diagEl]; // Damit die Zahlen nicht zu gross werden
 
-                        rowTimesScalar(row, 1/c);
-                        rowTimesScalar(diagEl, 1/c);
+                    rowTimesScalar(row, 1 / c);
+                    rowTimesScalar(diagEl, 1 / c);
 
-                        rowSubtract(row, diagEl);
-                    }
+                    rowSubtract(row, diagEl);
+                }
             }
         }
     }
 
-public int getRank() {
-    Matrix tempMatrix = new Matrix(this);
-    tempMatrix.triangularise();
+    public int getRank() {
+        Matrix tempMatrix = new Matrix(this);
+        tempMatrix.triangularise();
 
-    int Rank = 0;
+        int Rank = 0;
 
-    for (int i = 0; i < tempMatrix.diagDim; i++){
-        if (tempMatrix.A[i][i] != 0){
-            Rank++;
+        for (int i = 0; i < tempMatrix.diagDim; i++) {
+            if (tempMatrix.A[i][i] != 0) {
+                Rank++;
+            }
         }
-    }
 
-    return(Rank);
+        return (Rank);
     }
 
     public String toString() {
