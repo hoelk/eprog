@@ -6,19 +6,17 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException{
 
-        Matrix test1 = Matrix.parseMatrixFile("/home/hoelk/Dropbox/workspace/java/eprog/Ex22_MatrixRank/src/test_1");
-        Matrix test2 = Matrix.parseMatrixFile("/home/hoelk/Dropbox/workspace/java/eprog/Ex22_MatrixRank/src/test_2");
-        Matrix test3 = Matrix.parseMatrixFile("/home/hoelk/Dropbox/workspace/java/eprog/Ex22_MatrixRank/src/test_3");
-        Matrix test4 = Matrix.parseMatrixFile("/home/hoelk/Dropbox/workspace/java/eprog/Ex22_MatrixRank/src/test_4");
+        Matrix input = Matrix.parseMatrixFile(args[0]);
+        Matrix inputTriangular = new Matrix(input);
+        inputTriangular.triangularise();
 
-        System.out.println("-- Make Triangular");
+        System.out.println(input);
 
-        Matrix randrix = new Matrix(10, 10, true);
-        System.out.println(randrix.toString());
-        randrix.makeTriangular();
+        System.out.printf("Dreiecks Form der Matrix: %n%n");
+        System.out.println(inputTriangular);
 
-
-        test3.makeTriangular();
+        System.out.printf("Rang der Matrix: %n%n");
+        System.out.println(inputTriangular.getRank());
 
     }
 }
