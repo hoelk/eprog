@@ -1,17 +1,42 @@
-/**
- * Created by Stefan Fleck on 19.03.15.
- */
-
 import java.io.*;
 
+/**
+ * A real-valued Matrix.
+ * <p/>
+ * Supplies various constructors for creating
+ * matrices as well as a method to load a matrix
+ * from a text file.
+ * Also provides methods for manipulating matrices after
+ * they are created.
+ *
+ * @author Stefan Fleck
+ * @version 0.0.1
+ */
 
 public class Matrix {
+    /**
+     * Total number of matrices
+     */
     public static int numberOfMatrices;
+    /**
+     * ID code for each matrix
+     */
     private final int id;
+    /**
+     * Number of diagonal elements
+     */
     private final int diagDim;
+    /**
+     * Elements of the matrix
+     */
     private double[][] A;  // [row][col]
 
-    // Custom constructor
+    /**
+     * Custom constructor for creating a null matrix.
+     *
+     * @param rows number of rows.
+     * @param cols number of columns.
+     */
     Matrix(int rows, int cols) {
 
         id = numberOfMatrices++;
@@ -23,25 +48,46 @@ public class Matrix {
                 A[m][n] = 0;
             }
         }
-
-
     }
 
-    Matrix(double[][] a) {
 
-        id = numberOfMatrices++;
-        diagDim = Math.min(a.length, a[0].length);
-        A = a;
+    /**
+     * Custom constructor for creating a matrix filled with random values.
+     * <p/>
+     * If random == true, this constructor creates a Matrix filled with
+     * random double values between -1 and 1.
+     *
+     * @param rows   The number of rows.
+     * @param cols   The number of columns.
+     * @param random Whether the matrix should be filled with random values or not.
+     */
+    Matrix(int rows, int cols, boolean random) {
+        this(rows, cols);
 
+        if (random) {
+            A = new double[rows][cols];
+            for (int m = 0; m < rows; m++) {
+                for (int n = 0; n < cols; n++) {
+                    A[m][n] = Math.random() * 10;
+                }
+            }
+        }
     }
 
-    // Custom constructor for easy diagonal matrices
+
+    /**
+     * Custom constructor for creating a matrix with a diagonal element.
+     * <p/>
+     * Creates a diagonal matrix with a user-specified diagonal element.
+     * Useful for creating unit-matrices.
+     *
+     * @param rows   The number of rows.
+     * @param cols   The number of columns.
+     * @param diagEl The diagonal element of the matrix.
+     */
     Matrix(int rows, int cols, int diagEl) {
+        this(rows, cols);
 
-        id = numberOfMatrices++;
-        diagDim = Math.min(rows, cols);
-
-        A = new double[rows][cols];
         for (int m = 0; m < rows; m++) {
             for (int n = 0; n < cols; n++) {
 
@@ -54,21 +100,27 @@ public class Matrix {
         }
     }
 
-    // Custom constructor for Matrices with random values
-    Matrix(int rows, int cols, boolean random) {
+
+    /**
+     * Custom constructor for creating a matrix from a 2 dimensional array.
+     *
+     * @param array A 2d array
+     */
+    Matrix(double[][] array) {
 
         id = numberOfMatrices++;
-        diagDim = Math.min(rows, cols);
+        diagDim = Math.min(array.length, array[0].length);
+        A = array;
 
-        A = new double[rows][cols];
-        for (int m = 0; m < rows; m++) {
-            for (int n = 0; n < cols; n++) {
-                A[m][n] = Math.random() * 10;
-            }
-        }
     }
 
-    // Copy constructor
+    /**
+     * Copy Constructor.
+     * <p/>
+     * Creates a deep copy of a matrix object.
+     *
+     * @param B A 2d array
+     */
     Matrix(Matrix B) {
         id = ++numberOfMatrices;
         diagDim = B.diagDim;
@@ -79,7 +131,23 @@ public class Matrix {
         }
     }
 
-
+    /**
+     * Loads a matrix from a text file.
+     * <p/>
+     * Loads a matrix from a text file. The
+     * first row of the text file contains
+     * the dimensions of the matrix (space separated).
+     * The reminder of the text files contains the values
+     * of the matrix, also space separated. Example:
+     * <p/>
+     * 2 3
+     * 1 2 3
+     * 9 8 7
+     *
+     * @param path path of the Matrix file.
+     * @return
+     * @throws IOException
+     */
     public static Matrix parseMatrixFile(String path) throws IOException {
 
         FileInputStream istream = new FileInputStream(path);
@@ -111,49 +179,52 @@ public class Matrix {
 
     }
 
+    /**
+     * Set matrix element to a specified value.
+     *
+     * @param row   The row of the element to be modified.
+     * @param col   The column of the element to be modified.
+     * @param value The new value for the element.
+     */
+
     public void setElement(int row, int col, double value) {
         A[row][col] = value;
     }
 
-    public void setRow(int row, double[] new_row) {
-
-        if (row > A.length) {
-            System.out.println("Zeilenindex zu groß");
-        } else if (new_row.length != A[0].length) {
-            System.out.println("Länge der neuen Zeile nicht gleich Länge der alten Zeile");
-        } else {
-            A[row] = new_row;
-        }
-    }
-
-    public void setCol(int col, double[] new_col) {
-
-        if (col > A[0].length) {
-            System.out.println("Spaltenindex zu groß");
-        } else if (new_col.length != A.length) {
-            System.out.println("Länge der neuen Spalte nicht gleich Länge der alten Spalte");
-        } else {
-            for (int row = 0; row < A.length; row++) {
-                A[row][col] = new_col[row];
-            }
-        }
-    }
-
+    /**
+     * Get ID-value of a matrix.
+     *
+     * @return id of the matrix.
+     */
     public int getId() {
         return (id);
     }
 
+    /**
+     * Return the number of rows of a matrix.
+     *
+     * @return The number of rows.
+     */
     public int getRows() {
         return (A.length);
     }
 
+    /**
+     * Return the number of columns of a matrix.
+     *
+     * @return The number of columns.
+     */
     public int getCols() {
         return (A[0].length);
     }
 
-    public double[][] getArray() {
-        return (A);
-    }
+    /**
+     * Get the array index of the absolute maximum value of a row.
+     *
+     * @param row     The row of which the absolute maximum is required.
+     * @param fromcol The first column to consider for evaluating the maximum. The first fromcol - 1 columns are ignored.
+     * @return Array index of the absolute row maximum.
+     */
 
     private int getPosAbsRowMax(int row, int fromcol) {
         double max = Math.abs(A[row][fromcol]);
@@ -170,6 +241,13 @@ public class Matrix {
         return (maxpos);
     }
 
+    /**
+     * Get the array index of the absolute maximum value of a column.
+     *
+     * @param col     The column of which the array index of the absolute maximum is required.
+     * @param fromrow The first row to consider for evaluating the maximum. The first fromrow - 1 rows are ignored.
+     * @return Array index of the absolute column maximum.
+     */
     private int getPosAbsColMax(int col, int fromrow) {
         double max = Math.abs(A[fromrow][col]);
         int maxpos = fromrow;
@@ -185,6 +263,13 @@ public class Matrix {
         return (maxpos);
     }
 
+    /**
+     * Get the absolute maximum of a column.
+     *
+     * @param col     The column of which the absolute maximum is required.
+     * @param fromrow The first row to consider for evaluating the maximum. The first fromrow - 1 rows are ignored.
+     * @return The absolute maximum value of a column.
+     */
     private double getAbsColMax(int col, int fromrow) {
         double max = Math.abs(A[fromrow][col]);
         for (int row = fromrow; row < A.length; row++) {
@@ -193,6 +278,13 @@ public class Matrix {
         return (max);
     }
 
+    /**
+     * Get the absolute maximum of a row.
+     *
+     * @param row     The row of which the absolute maximum is required.
+     * @param fromcol The first column to consider for evaluating the maximum. The first fromcol - 1 columns are ignored.
+     * @return The absolute maximum value of a row.
+     */
     private double getAbsRowMax(int row, int fromcol) {
         double max = Math.abs(A[row][fromcol]);
 
@@ -202,6 +294,13 @@ public class Matrix {
         return (max);
     }
 
+    /**
+     * Ensures that the top left corner of a matrix, or submatrix thereof
+     * is not zero
+     *
+     * @param diagEl Diagonal element which is considered the top left corner of the submatrix. If diagEl = 0 the whole
+     *               matrix is processed
+     */
     private void makeTopLeftCornerNotZero(int diagEl) {
 
         if (diagEl == diagDim) {
@@ -223,6 +322,12 @@ public class Matrix {
 
     }
 
+    /**
+     * Switches two rows.
+     *
+     * @param row1 First row to be switched.
+     * @param row2 Second row to be switched.
+     */
     public void switchRows(int row1, int row2) {
         double[] temp = A[row1];
 
@@ -230,6 +335,12 @@ public class Matrix {
         A[row2] = temp;
     }
 
+    /**
+     * Switches two columns.
+     *
+     * @param col1 First column to be switched.
+     * @param col2 Second column to be switched.
+     */
     public void switchCols(int col1, int col2) {
 
         for (double[] row : A) {
@@ -240,6 +351,12 @@ public class Matrix {
         }
     }
 
+    /**
+     * Subtracts one row from another.
+     *
+     * @param row1 Row that is subtracted from.
+     * @param row2 Row to be subtracted.
+     */
     public void rowSubtract(int row1, int row2) {
 
         for (int i = 0; i < A[0].length; i++) {
@@ -247,12 +364,21 @@ public class Matrix {
         }
     }
 
+    /**
+     * Multiply each element of a row with a scalar.
+     *
+     * @param row    Row to be multiplied.
+     * @param scalar Scaler to multiply the row by.
+     */
     public void rowTimesScalar(int row, double scalar) {
         for (int i = 0; i < A[0].length; i++) {
             A[row][i] = A[row][i] * scalar;
         }
     }
 
+    /**
+     * Reduce a matrix to triangular form.
+     */
     public void triangularise() {
 
         for (int diagEl = 0; diagEl < diagDim; diagEl++) {
@@ -277,6 +403,11 @@ public class Matrix {
         }
     }
 
+    /**
+     * Get the rank of a matrix.
+     *
+     * @return Rank of the matrix.
+     */
     public int getRank() {
         Matrix tempMatrix = new Matrix(this);
         tempMatrix.triangularise();
@@ -291,6 +422,12 @@ public class Matrix {
 
         return (Rank);
     }
+
+    /**
+     * Return a string describing the matrix.
+     *
+     * @return String representation of the matrix.
+     */
 
     public String toString() {
 

@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e55e691d-bcc4-446e-aea3-81e179268863" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Ex22_MatrixRank/src/test_1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Ex22_MatrixRank/src/test_2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Ex22_MatrixRank/src/test_3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Ex22_MatrixRank/src/test_4" />
+    <list default="true" id="e55e691d-bcc4-446e-aea3-81e179268863" name="Default" comment="clean up">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ex22_MatrixRank/src/Main.java" afterPath="$PROJECT_DIR$/Ex22_MatrixRank/src/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Ex22_MatrixRank/src/Matrix.java" afterPath="$PROJECT_DIR$/Ex22_MatrixRank/src/Matrix.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -37,24 +33,17 @@
       <file leaf-file-name="Matrix.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Ex22_MatrixRank/src/Matrix.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.484848" vertical-offset="3002" max-vertical-offset="3708">
-              <caret line="301" column="37" selection-start-line="301" selection-start-column="37" selection-end-line="301" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="5148" max-vertical-offset="8190">
+              <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
-                <element signature="method#Matrix#1;class#Matrix#0" expanded="false" />
-                <element signature="method#Matrix#2;class#Matrix#0" expanded="false" />
-                <element signature="method#Matrix#3;class#Matrix#0" expanded="false" />
-                <element signature="method#getPosAbsRowMax#0;class#Matrix#0" expanded="false" />
-                <element signature="method#getPosAbsColMax#0;class#Matrix#0" expanded="false" />
-                <element signature="method#getAbsColMax#0;class#Matrix#0" expanded="false" />
-                <element signature="e#4796#4797#0" expanded="true" />
-                <element signature="e#4822#4823#0" expanded="true" />
-                <element signature="method#getAbsRowMax#0;class#Matrix#0" expanded="false" />
-                <element signature="method#switchRows#0;class#Matrix#0" expanded="false" />
-                <element signature="method#switchCols#0;class#Matrix#0" expanded="false" />
-                <element signature="method#rowSubtract#0;class#Matrix#0" expanded="false" />
-                <element signature="method#rowTimesScalar#0;class#Matrix#0" expanded="false" />
+                <element signature="e#4828#4829#0" expanded="true" />
+                <element signature="e#4863#4864#0" expanded="true" />
+                <element signature="e#4978#4979#0" expanded="true" />
+                <element signature="e#5005#5006#0" expanded="true" />
+                <element signature="e#5137#5138#0" expanded="true" />
+                <element signature="e#5170#5171#0" expanded="true" />
+                <element signature="e#5308#5309#0" expanded="true" />
+                <element signature="e#5344#5345#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,8 +52,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Ex22_MatrixRank/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36258993" vertical-offset="0" max-vertical-offset="695">
-              <caret line="14" column="60" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
+            <state vertical-scroll-proportion="0.75107914" vertical-offset="0" max-vertical-offset="695">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -152,35 +141,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Ex22_MatrixRank" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eprog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Ex14_Golomb-Lineal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eprog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ex14_Golomb-Lineal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -200,42 +161,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Ex13_formatText" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eprog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Ex11_and_2_checkDate_Funktionstabelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eprog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ex11_and_2_checkDate_Funktionstabelle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -554,7 +487,8 @@
       <workItem from="1427971904398" duration="9385000" />
       <workItem from="1428001928306" duration="1002000" />
       <workItem from="1428044952148" duration="16701000" />
-      <workItem from="1428075574055" duration="3277000" />
+      <workItem from="1428075574055" duration="3810000" />
+      <workItem from="1428129084042" duration="3351000" />
     </task>
     <task id="LOCAL-00001" summary="Matrix class minimal working code&#10;&#10;Basic Constructors and toString methods implemented">
       <created>1427949894315</created>
@@ -616,11 +550,23 @@
       <option name="project" value="LOCAL" />
       <updated>1428061523482</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Finished triangularisation, rank calculation, user interface">
+      <created>1428078889695</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1428078889695</updated>
+    </task>
+    <task id="LOCAL-00012" summary="clean up">
+      <created>1428079352282</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1428079352282</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42230000" />
+    <option name="totallyTimeSpent" value="46114000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="-3" width="1924" height="1172" extended-state="6" />
@@ -681,7 +627,9 @@
     <MESSAGE value="Methode to get row and col with maximum value" />
     <MESSAGE value="Methods to get row and col with maximum value, ignoring the first x rows/cols (required for makeTriangular)" />
     <MESSAGE value="MakeTriangular finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="MakeTriangular finished" />
+    <MESSAGE value="Finished triangularisation, rank calculation, user interface" />
+    <MESSAGE value="clean up" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean up" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -696,24 +644,42 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Ex22_MatrixRank/src/Matrix.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1368">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#4828#4829#0" expanded="true" />
+            <element signature="e#4863#4864#0" expanded="true" />
+            <element signature="e#4978#4979#0" expanded="true" />
+            <element signature="e#5005#5006#0" expanded="true" />
+            <element signature="e#5137#5138#0" expanded="true" />
+            <element signature="e#5170#5171#0" expanded="true" />
+            <element signature="e#5308#5309#0" expanded="true" />
+            <element signature="e#5344#5345#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ex22_MatrixRank/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="504">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ex22_MatrixRank/src/Matrix.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2416" max-vertical-offset="3438">
           <caret line="256" column="92" selection-start-line="256" selection-start-column="92" selection-end-line="256" selection-end-column="92" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#1;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#2;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#3;class#Matrix#0" expanded="false" />
-            <element signature="method#getPosAbsRowMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#getPosAbsColMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#getAbsColMax#0;class#Matrix#0" expanded="false" />
-            <element signature="e#4796#4797#0" expanded="true" />
-            <element signature="e#4822#4823#0" expanded="true" />
-            <element signature="method#getAbsRowMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#switchRows#0;class#Matrix#0" expanded="false" />
-            <element signature="method#switchCols#0;class#Matrix#0" expanded="false" />
-            <element signature="method#rowSubtract#0;class#Matrix#0" expanded="false" />
-            <element signature="method#rowTimesScalar#0;class#Matrix#0" expanded="false" />
+            <element signature="e#4828#4829#0" expanded="true" />
+            <element signature="e#4863#4864#0" expanded="true" />
+            <element signature="e#4978#4979#0" expanded="true" />
+            <element signature="e#5005#5006#0" expanded="true" />
+            <element signature="e#5137#5138#0" expanded="true" />
+            <element signature="e#5170#5171#0" expanded="true" />
+            <element signature="e#5308#5309#0" expanded="true" />
+            <element signature="e#5344#5345#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -731,21 +697,14 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1023" max-vertical-offset="1746">
           <caret line="241" column="0" selection-start-line="241" selection-start-column="0" selection-end-line="241" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#1;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#2;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#3;class#Matrix#0" expanded="false" />
-            <element signature="method#getPosAbsRowMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#getPosAbsColMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#getAbsColMax#0;class#Matrix#0" expanded="false" />
-            <element signature="e#4796#4797#0" expanded="true" />
-            <element signature="e#4822#4823#0" expanded="true" />
-            <element signature="method#getAbsRowMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#switchRows#0;class#Matrix#0" expanded="false" />
-            <element signature="method#switchCols#0;class#Matrix#0" expanded="false" />
-            <element signature="method#rowSubtract#0;class#Matrix#0" expanded="false" />
-            <element signature="method#rowTimesScalar#0;class#Matrix#0" expanded="false" />
+            <element signature="e#4828#4829#0" expanded="true" />
+            <element signature="e#4863#4864#0" expanded="true" />
+            <element signature="e#4978#4979#0" expanded="true" />
+            <element signature="e#5005#5006#0" expanded="true" />
+            <element signature="e#5137#5138#0" expanded="true" />
+            <element signature="e#5170#5171#0" expanded="true" />
+            <element signature="e#5308#5309#0" expanded="true" />
+            <element signature="e#5344#5345#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -763,21 +722,14 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2178">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#1;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#2;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#3;class#Matrix#0" expanded="false" />
-            <element signature="method#getPosAbsRowMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#getPosAbsColMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#getAbsColMax#0;class#Matrix#0" expanded="false" />
-            <element signature="e#4796#4797#0" expanded="true" />
-            <element signature="e#4822#4823#0" expanded="true" />
-            <element signature="method#getAbsRowMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#switchRows#0;class#Matrix#0" expanded="false" />
-            <element signature="method#switchCols#0;class#Matrix#0" expanded="false" />
-            <element signature="method#rowSubtract#0;class#Matrix#0" expanded="false" />
-            <element signature="method#rowTimesScalar#0;class#Matrix#0" expanded="false" />
+            <element signature="e#4828#4829#0" expanded="true" />
+            <element signature="e#4863#4864#0" expanded="true" />
+            <element signature="e#4978#4979#0" expanded="true" />
+            <element signature="e#5005#5006#0" expanded="true" />
+            <element signature="e#5137#5138#0" expanded="true" />
+            <element signature="e#5170#5171#0" expanded="true" />
+            <element signature="e#5308#5309#0" expanded="true" />
+            <element signature="e#5344#5345#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -795,21 +747,14 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2196">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#1;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#2;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#3;class#Matrix#0" expanded="false" />
-            <element signature="method#getPosAbsRowMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#getPosAbsColMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#getAbsColMax#0;class#Matrix#0" expanded="false" />
-            <element signature="e#4796#4797#0" expanded="true" />
-            <element signature="e#4822#4823#0" expanded="true" />
-            <element signature="method#getAbsRowMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#switchRows#0;class#Matrix#0" expanded="false" />
-            <element signature="method#switchCols#0;class#Matrix#0" expanded="false" />
-            <element signature="method#rowSubtract#0;class#Matrix#0" expanded="false" />
-            <element signature="method#rowTimesScalar#0;class#Matrix#0" expanded="false" />
+            <element signature="e#4828#4829#0" expanded="true" />
+            <element signature="e#4863#4864#0" expanded="true" />
+            <element signature="e#4978#4979#0" expanded="true" />
+            <element signature="e#5005#5006#0" expanded="true" />
+            <element signature="e#5137#5138#0" expanded="true" />
+            <element signature="e#5170#5171#0" expanded="true" />
+            <element signature="e#5308#5309#0" expanded="true" />
+            <element signature="e#5344#5345#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -827,21 +772,14 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1980">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#1;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#2;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#3;class#Matrix#0" expanded="false" />
-            <element signature="method#getPosAbsRowMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#getPosAbsColMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#getAbsColMax#0;class#Matrix#0" expanded="false" />
-            <element signature="e#4796#4797#0" expanded="true" />
-            <element signature="e#4822#4823#0" expanded="true" />
-            <element signature="method#getAbsRowMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#switchRows#0;class#Matrix#0" expanded="false" />
-            <element signature="method#switchCols#0;class#Matrix#0" expanded="false" />
-            <element signature="method#rowSubtract#0;class#Matrix#0" expanded="false" />
-            <element signature="method#rowTimesScalar#0;class#Matrix#0" expanded="false" />
+            <element signature="e#4828#4829#0" expanded="true" />
+            <element signature="e#4863#4864#0" expanded="true" />
+            <element signature="e#4978#4979#0" expanded="true" />
+            <element signature="e#5005#5006#0" expanded="true" />
+            <element signature="e#5137#5138#0" expanded="true" />
+            <element signature="e#5170#5171#0" expanded="true" />
+            <element signature="e#5308#5309#0" expanded="true" />
+            <element signature="e#5344#5345#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -866,21 +804,14 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2016">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#1;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#2;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#3;class#Matrix#0" expanded="false" />
-            <element signature="method#getPosAbsRowMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#getPosAbsColMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#getAbsColMax#0;class#Matrix#0" expanded="false" />
-            <element signature="e#4796#4797#0" expanded="true" />
-            <element signature="e#4822#4823#0" expanded="true" />
-            <element signature="method#getAbsRowMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#switchRows#0;class#Matrix#0" expanded="false" />
-            <element signature="method#switchCols#0;class#Matrix#0" expanded="false" />
-            <element signature="method#rowSubtract#0;class#Matrix#0" expanded="false" />
-            <element signature="method#rowTimesScalar#0;class#Matrix#0" expanded="false" />
+            <element signature="e#4828#4829#0" expanded="true" />
+            <element signature="e#4863#4864#0" expanded="true" />
+            <element signature="e#4978#4979#0" expanded="true" />
+            <element signature="e#5005#5006#0" expanded="true" />
+            <element signature="e#5137#5138#0" expanded="true" />
+            <element signature="e#5170#5171#0" expanded="true" />
+            <element signature="e#5308#5309#0" expanded="true" />
+            <element signature="e#5344#5345#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -905,21 +836,14 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2124">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#1;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#2;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#3;class#Matrix#0" expanded="false" />
-            <element signature="method#getPosAbsRowMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#getPosAbsColMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#getAbsColMax#0;class#Matrix#0" expanded="false" />
-            <element signature="e#4796#4797#0" expanded="true" />
-            <element signature="e#4822#4823#0" expanded="true" />
-            <element signature="method#getAbsRowMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#switchRows#0;class#Matrix#0" expanded="false" />
-            <element signature="method#switchCols#0;class#Matrix#0" expanded="false" />
-            <element signature="method#rowSubtract#0;class#Matrix#0" expanded="false" />
-            <element signature="method#rowTimesScalar#0;class#Matrix#0" expanded="false" />
+            <element signature="e#4828#4829#0" expanded="true" />
+            <element signature="e#4863#4864#0" expanded="true" />
+            <element signature="e#4978#4979#0" expanded="true" />
+            <element signature="e#5005#5006#0" expanded="true" />
+            <element signature="e#5137#5138#0" expanded="true" />
+            <element signature="e#5170#5171#0" expanded="true" />
+            <element signature="e#5308#5309#0" expanded="true" />
+            <element signature="e#5344#5345#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -944,21 +868,14 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2196">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#1;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#2;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#3;class#Matrix#0" expanded="false" />
-            <element signature="method#getPosAbsRowMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#getPosAbsColMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#getAbsColMax#0;class#Matrix#0" expanded="false" />
-            <element signature="e#4796#4797#0" expanded="true" />
-            <element signature="e#4822#4823#0" expanded="true" />
-            <element signature="method#getAbsRowMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#switchRows#0;class#Matrix#0" expanded="false" />
-            <element signature="method#switchCols#0;class#Matrix#0" expanded="false" />
-            <element signature="method#rowSubtract#0;class#Matrix#0" expanded="false" />
-            <element signature="method#rowTimesScalar#0;class#Matrix#0" expanded="false" />
+            <element signature="e#4828#4829#0" expanded="true" />
+            <element signature="e#4863#4864#0" expanded="true" />
+            <element signature="e#4978#4979#0" expanded="true" />
+            <element signature="e#5005#5006#0" expanded="true" />
+            <element signature="e#5137#5138#0" expanded="true" />
+            <element signature="e#5170#5171#0" expanded="true" />
+            <element signature="e#5308#5309#0" expanded="true" />
+            <element signature="e#5344#5345#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1048,32 +965,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Ex22_MatrixRank/src/Matrix.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.484848" vertical-offset="3002" max-vertical-offset="3708">
-          <caret line="301" column="37" selection-start-line="301" selection-start-column="37" selection-end-line="301" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="5148" max-vertical-offset="8190">
+          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="method#Matrix#0;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#1;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#2;class#Matrix#0" expanded="false" />
-            <element signature="method#Matrix#3;class#Matrix#0" expanded="false" />
-            <element signature="method#getPosAbsRowMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#getPosAbsColMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#getAbsColMax#0;class#Matrix#0" expanded="false" />
-            <element signature="e#4796#4797#0" expanded="true" />
-            <element signature="e#4822#4823#0" expanded="true" />
-            <element signature="method#getAbsRowMax#0;class#Matrix#0" expanded="false" />
-            <element signature="method#switchRows#0;class#Matrix#0" expanded="false" />
-            <element signature="method#switchCols#0;class#Matrix#0" expanded="false" />
-            <element signature="method#rowSubtract#0;class#Matrix#0" expanded="false" />
-            <element signature="method#rowTimesScalar#0;class#Matrix#0" expanded="false" />
+            <element signature="e#4828#4829#0" expanded="true" />
+            <element signature="e#4863#4864#0" expanded="true" />
+            <element signature="e#4978#4979#0" expanded="true" />
+            <element signature="e#5005#5006#0" expanded="true" />
+            <element signature="e#5137#5138#0" expanded="true" />
+            <element signature="e#5170#5171#0" expanded="true" />
+            <element signature="e#5308#5309#0" expanded="true" />
+            <element signature="e#5344#5345#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ex22_MatrixRank/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36258993" vertical-offset="0" max-vertical-offset="695">
-          <caret line="14" column="60" selection-start-line="14" selection-start-column="60" selection-end-line="14" selection-end-column="60" />
+        <state vertical-scroll-proportion="0.75107914" vertical-offset="0" max-vertical-offset="695">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>

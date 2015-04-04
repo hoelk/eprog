@@ -1,8 +1,15 @@
 import java.io.IOException;
 
-/**
- * Created by hoelk on 02.04.15.
+/** A real-valued Matrix.
+ *
+ * Loads a matrix from a text file that is supplied as a command line
+ * argument, displays the matrix, displays the triangulised version
+ * of the matrix and also its rank.
+ *
+ * @author Stefan Fleck
+ * @version 0.0.1
  */
+
 public class Main {
     public static void main(String[] args) throws IOException{
 
