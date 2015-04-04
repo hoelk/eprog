@@ -2,7 +2,7 @@ import java.io.*;
 
 /**
  * A real-valued Matrix.
- * <p/>
+ *
  * Supplies various constructors for creating
  * matrices as well as a method to load a matrix
  * from a text file.
@@ -53,7 +53,7 @@ public class Matrix {
 
     /**
      * Custom constructor for creating a matrix filled with random values.
-     * <p/>
+     *
      * If random == true, this constructor creates a Matrix filled with
      * random double values between -1 and 1.
      *
@@ -77,8 +77,7 @@ public class Matrix {
 
     /**
      * Custom constructor for creating a matrix with a diagonal element.
-     * <p/>
-     * Creates a diagonal matrix with a user-specified diagonal element.
+     *
      * Useful for creating unit-matrices.
      *
      * @param rows   The number of rows.
@@ -104,7 +103,7 @@ public class Matrix {
     /**
      * Custom constructor for creating a matrix from a 2 dimensional array.
      *
-     * @param array A 2d array
+     * @param array A 2d array.
      */
     Matrix(double[][] array) {
 
@@ -116,10 +115,10 @@ public class Matrix {
 
     /**
      * Copy Constructor.
-     * <p/>
+     *
      * Creates a deep copy of a matrix object.
      *
-     * @param B A 2d array
+     * @param B A The matrix to be copied.
      */
     Matrix(Matrix B) {
         id = ++numberOfMatrices;
@@ -133,20 +132,21 @@ public class Matrix {
 
     /**
      * Loads a matrix from a text file.
-     * <p/>
-     * Loads a matrix from a text file. The
+     *
+     * The
      * first row of the text file contains
      * the dimensions of the matrix (space separated).
      * The reminder of the text files contains the values
      * of the matrix, also space separated. Example:
-     * <p/>
-     * 2 3
-     * 1 2 3
-     * 9 8 7
+     * <p>
+     * 2 3 <br>
+     * 1 2 3 <br>
+     * 9 8 7 <br>
+     * </p>
      *
-     * @param path path of the Matrix file.
-     * @return
-     * @throws IOException
+     * @param path The path of the Matrix file.
+     * @return A matrix.
+     * @throws IOException Entering an invalid path will throw an IOException.
      */
     public static Matrix parseMatrixFile(String path) throws IOException {
 
@@ -194,7 +194,7 @@ public class Matrix {
     /**
      * Get ID-value of a matrix.
      *
-     * @return id of the matrix.
+     * @return The id of the matrix.
      */
     public int getId() {
         return (id);
@@ -223,7 +223,7 @@ public class Matrix {
      *
      * @param row     The row of which the absolute maximum is required.
      * @param fromcol The first column to consider for evaluating the maximum. The first fromcol - 1 columns are ignored.
-     * @return Array index of the absolute row maximum.
+     * @return The Array index of the absolute row maximum.
      */
 
     private int getPosAbsRowMax(int row, int fromcol) {
@@ -246,7 +246,7 @@ public class Matrix {
      *
      * @param col     The column of which the array index of the absolute maximum is required.
      * @param fromrow The first row to consider for evaluating the maximum. The first fromrow - 1 rows are ignored.
-     * @return Array index of the absolute column maximum.
+     * @return The Array index of the absolute column maximum.
      */
     private int getPosAbsColMax(int col, int fromrow) {
         double max = Math.abs(A[fromrow][col]);
@@ -298,8 +298,9 @@ public class Matrix {
      * Ensures that the top left corner of a matrix, or submatrix thereof
      * is not zero
      *
-     * @param diagEl Diagonal element which is considered the top left corner of the submatrix. If diagEl = 0 the whole
-     *               matrix is processed
+     * @param diagEl The diagonal element which is considered the top left corner of the submatrix. If diagEl = 0 the whole
+     *               matrix is processed, if diagEl = 1 the submatrix not containing the first row and first column
+     *               is processed, and so forth..
      */
     private void makeTopLeftCornerNotZero(int diagEl) {
 

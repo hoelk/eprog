@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-/** A real-valued Matrix.
+/** Main program for the first home exercise of the lecture 122.425.
  *
  * Loads a matrix from a text file that is supplied as a command line
  * argument, displays the matrix, displays the triangulised version
