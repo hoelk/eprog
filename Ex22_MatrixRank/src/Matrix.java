@@ -416,7 +416,7 @@ public class Matrix {
         int Rank = 0;
 
         for (int i = 0; i < tempMatrix.diagDim; i++) {
-            if (tempMatrix.A[i][i] != 0) {
+            if (tempMatrix.A[i][i] > 0.0001 || tempMatrix.A[i][i] < -0.0001) {
                 Rank++;
             }
         }
