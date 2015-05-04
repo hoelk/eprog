@@ -10,7 +10,7 @@ import java.io.*;
  * they are created.
  *
  * @author Stefan Fleck
- * @version 0.0.1
+ * @version 0.1.0
  */
 
 public class Matrix {
@@ -316,7 +316,7 @@ public class Matrix {
                 switchRows(diagEl, getPosAbsColMax(i, diagEl));
                 switchCols(diagEl, getPosAbsRowMax(diagEl, diagEl));
             }
-            if (A[diagEl][diagEl] != 0) {
+            if (A[diagEl][diagEl] > 0.0001 || A[diagEl][diagEl] < -0.0001 ) {
                 break;
             }
         }
@@ -387,7 +387,7 @@ public class Matrix {
 
             for (int row = diagEl + 1; row < A.length; row++) {
 
-                if (A[row][diagEl] != 0) {
+                if (A[row][diagEl] > 0.0001 || A[row][diagEl] < -0.0001 ) {
                     double a = A[diagEl][diagEl];
                     double b = A[row][diagEl];
                     rowTimesScalar(row, a);
@@ -399,6 +399,9 @@ public class Matrix {
                     rowTimesScalar(diagEl, 1 / c);
 
                     rowSubtract(row, diagEl);
+
+
+
                 }
             }
         }
