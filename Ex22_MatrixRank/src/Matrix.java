@@ -166,7 +166,7 @@ public class Matrix {
 
         for (int row = 0; row < rows; row++) {
             line = input.readLine();
-            elem = line.split(" ");
+            elem = line.trim().split("\\s+");
 
             for (int col = 0; col < cols; col++) {
                 res.setElement(row, col, Double.parseDouble(elem[col]));

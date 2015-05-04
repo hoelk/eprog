@@ -31,6 +31,7 @@ public class Main {
                 "mat5x5.dat", "mat6x6.dat", "mat7x7.dat"};
 
         for (String i: testMatrices) {
+            System.out.println(i);
             String path = "/home/hoelk/Dropbox/workspace/java/eprog/Ex22_MatrixRank/src/" + i;
             Matrix test = Matrix.parseMatrixFile(path);
 
