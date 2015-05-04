@@ -53,5 +53,14 @@ public class Main {
         }
 
 
+        Matrix inputSub = input.subMatrix(0,3);
+
+        System.out.println(input);
+        System.out.println(inputSub);
+
+
+
+
+
     }
 }
