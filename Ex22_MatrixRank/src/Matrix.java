@@ -424,7 +424,31 @@ public class Matrix {
             }
         }
 
-        return (Rank);
+        return Rank;
+    }
+
+    public double getDet() {
+        if(getRows() == 2 && getCols() == 2) {
+            return getDet2();
+        } else if (getRows() == getCols()) {
+            return(9999.);
+        }
+
+        System.out.println("Matrix not square");
+
+        return (999);
+
+
+    }
+
+    private double getDet2() {
+        if(getRows() == 2 && getCols() == 2){
+            return A[0][0] * A[1][1] - A[1][0] * A[0][1];
+        } else {
+            System.out.println("Matrix not 2x2");
+        }
+
+        return 999;
     }
 
     /**
@@ -437,7 +461,7 @@ public class Matrix {
 
         StringBuilder matrix = new StringBuilder("");
 
-        matrix.append(String.format("%d x %d Matrix%n%n", getRows(), getCols()));
+        matrix.append(String.format("%d x %d Matrix %n%n", getRows(), getCols()));
 
         for (int row = 0; row < A.length; row++) {
             for (int col = 0; col < A[row].length; col++) {

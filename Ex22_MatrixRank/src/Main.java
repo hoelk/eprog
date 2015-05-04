@@ -22,8 +22,35 @@ public class Main {
         System.out.printf("Dreiecks Form der Matrix: %n%n");
         System.out.println(inputTriangular);
 
-        System.out.printf("Rang der Matrix: %n%n");
+        System.out.printf("Rang der Matrix: ");
         System.out.println(inputTriangular.getRank());
+
+        System.out.printf("%n%n");
+
+        String[] testMatrices = {"mat2x2.dat", "mat2x2.dat", "mat4x4.dat",
+                "mat5x5.dat", "mat6x6.dat", "mat7x7.dat"};
+
+        for (String i: testMatrices) {
+            String path = "/home/hoelk/Dropbox/workspace/java/eprog/Ex22_MatrixRank/src/" + i;
+            Matrix test = Matrix.parseMatrixFile(path);
+
+            Matrix testTriangular = new Matrix(test);
+            testTriangular.triangularise();
+
+            System.out.println(test);
+
+            System.out.printf("Dreiecks Form der Matrix: %n%n");
+            System.out.println(testTriangular);
+
+            System.out.printf("Rang der Matrix: ");
+            System.out.println(test.getRank());
+            System.out.println(test);
+            System.out.printf("Determinante der Matrix: ");
+            System.out.println(test.getDet());
+
+            System.out.printf("%n%n");
+        }
+
 
     }
 }
