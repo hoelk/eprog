@@ -428,28 +428,60 @@ public class Matrix {
     }
 
     public double getDet() {
-        if(getRows() == 2 && getCols() == 2) {
-            return getDet2();
-        } else if (getRows() == getCols()) {
-            return(9999.);
+        double res = 0;
+
+        try {
+            if (getRows() != getCols()){
+                throw new MatrixFormatException("Matrix not square");
+            } else if (getRows() == 1)  {
+                res = A[0][0];
+            } else if (getRows() == 2)  {
+                res = A[0][0] * A[1][1] - A[1][0] * A[0][1];
+            } else {
+                // Entwickeln nach erster Zeile, aufpassen mit index!
+                for(int i = 0; i < getRows(); i++){
+                    double ik = Math.pow(-1.0, (i+1));
+                    res += A[i][0] * ik * subMatrix(i,0).getDet();
+                }
+            }
+        } catch(MatrixFormatException e) {
+            System.err.println("Caught MatrixFormatException: " + e.getMessage());
+        } catch(MatrixIndexException e) {
+            System.err.println("Caught MatrixIndexException: " + e.getMessage());
         }
 
-        System.out.println("Matrix not square");
+        return res;
+    }
 
-        return (999);
 
+    public Matrix subMatrix(int i, int j) throws MatrixIndexException{
+
+        if(i > getRows() || j > getCols()){
+            throw new MatrixIndexException("Matrix Index out of Range");
+        }
+
+        double[][] sub = new double[getRows() -1][getCols() -1];
+
+        for (int rowIdx = 0; rowIdx < getRows() -1; rowIdx++ ) {
+            int rowSkip = 0;
+            if (rowIdx >= i) rowSkip = 1;
+
+            for (int colIdx = 0; colIdx < getCols() -1; colIdx ++){
+                int colSkip = 0;
+                if (colIdx >= j) colSkip = 1;
+
+                sub[rowIdx][colIdx] = A[rowIdx + rowSkip][colIdx + colSkip];
+
+            }
+        }
+
+        return new Matrix(sub);
 
     }
 
-    private double getDet2() {
-        if(getRows() == 2 && getCols() == 2){
-            return A[0][0] * A[1][1] - A[1][0] * A[0][1];
-        } else {
-            System.out.println("Matrix not 2x2");
-        }
 
-        return 999;
-    }
+
+
 
     /**
      * Return a string describing the matrix.
@@ -458,6 +490,7 @@ public class Matrix {
      */
 
     public String toString() {
+
 
         StringBuilder matrix = new StringBuilder("");
 
