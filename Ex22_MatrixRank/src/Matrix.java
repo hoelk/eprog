@@ -37,6 +37,8 @@ public class Matrix {
      * @param rows number of rows.
      * @param cols number of columns.
      */
+
+
     Matrix(int rows, int cols) {
 
         id = numberOfMatrices++;
@@ -316,7 +318,7 @@ public class Matrix {
                 switchRows(diagEl, getPosAbsColMax(i, diagEl));
                 switchCols(diagEl, getPosAbsRowMax(diagEl, diagEl));
             }
-            if (A[diagEl][diagEl] > 0.0001 || A[diagEl][diagEl] < -0.0001 ) {
+            if (A[diagEl][diagEl] > 0.0001 || A[diagEl][diagEl] < -0.0001) {
                 break;
             }
         }
@@ -387,7 +389,7 @@ public class Matrix {
 
             for (int row = diagEl + 1; row < A.length; row++) {
 
-                if (A[row][diagEl] > 0.0001 || A[row][diagEl] < -0.0001 ) {
+                if (A[row][diagEl] > 0.0001 || A[row][diagEl] < -0.0001) {
                     double a = A[diagEl][diagEl];
                     double b = A[row][diagEl];
                     rowTimesScalar(row, a);
@@ -399,7 +401,6 @@ public class Matrix {
                     rowTimesScalar(diagEl, 1 / c);
 
                     rowSubtract(row, diagEl);
-
 
 
                 }
@@ -427,26 +428,33 @@ public class Matrix {
         return Rank;
     }
 
+
+    /**
+     * Get the determinant of a (square) matrix.
+     *
+     * @return determinant of a square matrix
+     */
+
     public double getDet() {
         double res = 0;
 
         try {
-            if (getRows() != getCols()){
+            if (getRows() != getCols()) {
                 throw new MatrixFormatException("Matrix not square");
-            } else if (getRows() == 1)  {
+            } else if (getRows() == 1) {
                 res = A[0][0];
-            } else if (getRows() == 2)  {
+            } else if (getRows() == 2) {
                 res = A[0][0] * A[1][1] - A[1][0] * A[0][1];
             } else {
                 // Entwickeln nach erster Zeile, aufpassen mit index!
-                for(int i = 0; i < getRows(); i++){
-                    double ik = Math.pow(-1.0, (i+1));
-                    res += A[i][0] * ik * subMatrix(i,0).getDet();
+                for (int i = 0; i < getRows(); i++) {
+                    double ik = Math.pow(-1.0, (i));
+                    res += A[i][0] * ik * subMatrix(i, 0).getDet();
                 }
             }
-        } catch(MatrixFormatException e) {
+        } catch (MatrixFormatException e) {
             System.err.println("Caught MatrixFormatException: " + e.getMessage());
-        } catch(MatrixIndexException e) {
+        } catch (MatrixIndexException e) {
             System.err.println("Caught MatrixIndexException: " + e.getMessage());
         }
 
@@ -454,19 +462,26 @@ public class Matrix {
     }
 
 
-    public Matrix subMatrix(int i, int j) throws MatrixIndexException{
+    /**
+     * Create a submatrix be removing one row and one column.
+     *
+     * @param i Row to remove.
+     * @param j column to remove.
+     * @return Submatrix of input matrix after removing row i and column j.
+     */
+    public Matrix subMatrix(int i, int j) throws MatrixIndexException {
 
-        if(i > getRows() || j > getCols()){
+        if (i > getRows() || j > getCols()) {
             throw new MatrixIndexException("Matrix Index out of Range");
         }
 
-        double[][] sub = new double[getRows() -1][getCols() -1];
+        double[][] sub = new double[getRows() - 1][getCols() - 1];
 
-        for (int rowIdx = 0; rowIdx < getRows() -1; rowIdx++ ) {
+        for (int rowIdx = 0; rowIdx < getRows() - 1; rowIdx++) {
             int rowSkip = 0;
             if (rowIdx >= i) rowSkip = 1;
 
-            for (int colIdx = 0; colIdx < getCols() -1; colIdx ++){
+            for (int colIdx = 0; colIdx < getCols() - 1; colIdx++) {
                 int colSkip = 0;
                 if (colIdx >= j) colSkip = 1;
 
@@ -480,9 +495,6 @@ public class Matrix {
     }
 
 
-
-
-
     /**
      * Return a string describing the matrix.
      *
@@ -490,7 +502,6 @@ public class Matrix {
      */
 
     public String toString() {
-
 
         StringBuilder matrix = new StringBuilder("");
 
