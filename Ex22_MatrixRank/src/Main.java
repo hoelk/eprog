@@ -27,7 +27,7 @@ public class Main {
             System.out.println(inputTriangular);
             System.out.printf("Rang der Matrix: %d%n", inputTriangular.getRank());
             if (input.getCols() == input.getRows()) {
-                System.out.printf("Determinante der Matrix: %f%n", input.getDet());
+                System.out.printf("Determinante der Matrix: %.3f%n", input.getDet());
             }
 
         } catch (NullPointerException e) {
