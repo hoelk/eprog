@@ -1,12 +1,8 @@
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
 /**
- * Main program for the first home exercise of the lecture 122.425.
+ * Main program for the third home exercise of the lecture 122.425.
  *
- * Loads a matrix from a text file that is supplied as a command line
- * argument, displays the matrix, displays the triangulised version
- * of the matrix and also its rank.
+ * Generates random n x n matrices with increasing n and measures the
+ * runtime of rank- and determinant calculating methods
  *
  * @author Stefan Fleck
  * @version 0.0.1
@@ -15,27 +11,61 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
 
-        try {
-            Matrix input = Matrix.parseMatrixFile(args[0]);
+        boolean doRank = true;
+        boolean doDet = true;
 
-            Matrix inputTriangular = new Matrix(input);
-            inputTriangular.triangularise();
+        System.out.println("      N      Rang       t[s]       Det        t[s]");
+        System.out.println("--------------------------------------------------");
 
-            System.out.println(input);
 
-            System.out.printf("Dreiecks Form der Matrix: %n%n");
-            System.out.println(inputTriangular);
-            System.out.printf("Rang der Matrix: %d%n", inputTriangular.getRank());
-            if (input.getCols() == input.getRows()) {
-                System.out.printf("Determinante der Matrix: %.3f%n", input.getDet());
+        for (int i = 1; i < 999; i++) {
+            long t_start;
+            long t_end ;
+            int rank = 0;
+            double det =0;
+
+            System.out.println();
+
+            double t_det = 0;
+            double t_rank = 99;
+
+            int n = i;
+
+            if (i > 16){
+                n = i*i;
             }
 
-        } catch (NullPointerException e) {
-            System.err.println("Caught NullPointerException: " + e.getMessage());
-        } catch (FileNotFoundException e) {
-            System.err.println("\nCaught FileNotFoundException: " + e.getMessage());
-        } catch (IOException e) {
-            System.err.println("\nCaught IOException: " + e.getMessage());
+
+            Matrix A = new Matrix(n, n, true);
+
+            if (doRank) {
+                t_start = System.currentTimeMillis();
+                rank = A.getRank();
+                t_end = System.currentTimeMillis();
+                t_rank = (double) (t_end - t_start) / 1000;
+            }
+
+            if (doDet) {
+                t_start = System.currentTimeMillis();
+                det = A.getDet();
+                t_end = System.currentTimeMillis();
+                t_det = (double) (t_end - t_start) / 1000;
+            }
+
+            if (doRank && doDet) {
+                System.out.printf("     %3d      %3d %10.3f %10.3f %10.3f%n", n, rank, t_rank, det, t_det);
+            } else if (doRank) {
+                System.out.printf("     %3d      %3d %10.3f%n", n, rank, t_rank);
+            } else if (doDet) {
+                System.out.printf("     %3d                     %10.3f %10.3f%n", i, det, t_det);
+            } else {
+                break;
+            }
+
+            if (t_rank > 0.5) doRank = false;
+            if (t_det > 0.5) doDet = false;
+
         }
+
     }
 }

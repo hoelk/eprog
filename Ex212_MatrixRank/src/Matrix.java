@@ -70,7 +70,7 @@ public class Matrix {
             A = new double[rows][cols];
             for (int m = 0; m < rows; m++) {
                 for (int n = 0; n < cols; n++) {
-                    A[m][n] = Math.random() * 10;
+                    A[m][n] = Math.random();
                 }
             }
         }
@@ -468,6 +468,7 @@ public class Matrix {
      * @param i Row to remove.
      * @param j column to remove.
      * @return Submatrix of input matrix after removing row i and column j.
+     * @throws MatrixIndexException Trying to access a non-existing matrix element will throw a MatrixIndexException.
      */
     public Matrix subMatrix(int i, int j) throws MatrixIndexException {
 
