@@ -17,7 +17,7 @@ public class Place implements Comparable<Place> {
         try {
             checkPlace(countryCode, cityNameASCII, cityName, region, population, lat, lon);
         } catch (InvalidInputException e) {
-            System.err.println("\nCaught InvalidInputException: " + e.getMessage());
+            // System.err.println("\nWARNING: Caught InvalidInputException: " + e.getMessage
         }
 
         this.countryCode = countryCode;
@@ -32,10 +32,10 @@ public class Place implements Comparable<Place> {
 
     void checkPlace(String countryCode, String cityNameASCII, String cityName, String region, int population, double lat, double lon) throws InvalidInputException {
 
-        if (countryCode.length() != 2) throw new InvalidInputException("Country Code not valid");
-        if (cityNameASCII.length() > 100) throw new InvalidInputException("Ascii City Name not valid");
-        if (cityName.length() > 255) throw new InvalidInputException("City Name not valid");
-        if (region.length() != 2) throw new InvalidInputException("region not valid");
+        if (countryCode.length() != 2) throw new InvalidInputException("Country Code not valid: " + countryCode);
+        if (cityNameASCII.length() > 100) throw new InvalidInputException("Ascii City Name not valid: " + cityNameASCII);
+        if (cityName.length() > 255) throw new InvalidInputException("City Name not valid"+ cityName);
+        if ((region.length() != 2)  && (region.length() != 0)) throw new InvalidInputException("region not valid: " + region);
         if (population < -1) throw new InvalidInputException("population not valid");
         if (lat > 90 || lat < -90) throw new InvalidInputException("lat not valid");
         if (lon > 180 || lon < -180) throw new InvalidInputException("lon not valid");
@@ -55,7 +55,6 @@ public class Place implements Comparable<Place> {
     }
 
 
-    @Override
     public boolean equals(Place other) {
         return (other.countryCode.equals(countryCode) &&
                 other.cityNameASCII.equals(cityNameASCII) &&
@@ -67,10 +66,10 @@ public class Place implements Comparable<Place> {
     }
 
 
-    @Override
+/*    @Override
     public int hashCode() {
-        return population;
-    }
+        return population.hashCode();
+    }*/
 
     @Override
     public String toString() {

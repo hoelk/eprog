@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 import java.io.*;
-import java.util.HashSet;
+import java.util.TreeSet;
 
 /**
  * Created by hoelk on 25.06.15.
  */
 public class Places {
 
-    HashSet<Place> Places = new HashSet<Place>();
+    TreeSet<Place> Places = new TreeSet<Place>();
 
     Places(String path) {
 
@@ -19,42 +19,45 @@ public class Places {
     }
 
 
-    public static HashSet<Place> readCsvPlaces(String path) throws IOException {
-        System.out.println("Reading csv file");
+    public static TreeSet<Place> readCsvPlaces(String path) throws IOException {
 
         FileInputStream istream = new FileInputStream(path);
         InputStreamReader reader = new InputStreamReader(istream);
         BufferedReader input = new BufferedReader(reader);
-        HashSet<Place> Places = new HashSet<Place>();
+        TreeSet<Place> Places = new TreeSet<Place>();
 
-        for (int row = 1; row < 1000; row++) {
-            String line = input.readLine();
+        String line = input.readLine(); // reads first line (header) which is not processed
+
+
+        while ((line = input.readLine()) != null ) {
+
             String[] elem = line.split(",");
 
-            String CountryCode = elem[0];
-            String CityNameASCII = elem[1];
-            String CityName = elem[2];
-            String Region = elem[3];
-            int Population = -1;
+            String countryCode = elem[0];
+            String cityNameASCII = elem[1];
+            String cityName = elem[2];
+            String region = elem[3];
+            int population = -1;
 
             try {
-                Population = Integer.parseInt(elem[4]);
+                population = Integer.parseInt(elem[4]);
             } catch (NumberFormatException e) {
-                //  System.err.println("\nWarning: NumberFormatException when parsing population: " + e.getMessage());
+                //System.err.println("\nWARNING: NumberFormatException when parsing population: " + e.getMessage());
             }
-            double Latitude = Double.parseDouble(elem[5]);
-            double Longitude = Double.parseDouble(elem[6]);
+            double lat = Double.parseDouble(elem[5]);
+            double lon = Double.parseDouble(elem[6]);
 
-            Place temp = new Place(CountryCode, CityNameASCII, CityName, Region, Population, Latitude, Longitude);
+            Place temp = new Place(countryCode, cityNameASCII, cityName, region, population, lat, lon);
             Places.add(temp);
 
-            System.out.println(temp.toString());
         }
 
         input.close();
         return Places;
 
     }
+
+
 }
 
 
