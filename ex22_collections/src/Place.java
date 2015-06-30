@@ -17,13 +17,13 @@ public class Place implements Comparable<Place> {
         try {
             checkPlace(countryCode, cityNameASCII, cityName, region, population, lat, lon);
         } catch (InvalidInputException e) {
-            // System.err.println("\nWARNING: Caught InvalidInputException: " + e.getMessage
+            // System.err.println("\nWARNING: Caught InvalidInputException: " + e.getMessage);
         }
 
-        this.countryCode = countryCode;
-        this.cityNameASCII = cityNameASCII;
-        this.cityName = cityName;
-        this.region = region;
+        this.countryCode = countryCode.toLowerCase().trim();
+        this.cityNameASCII = cityNameASCII.trim();
+        this.cityName = cityName.trim();
+        this.region = region.trim();
         this.population = population;
         this.lat = lat;
         this.lon = lon;
@@ -46,11 +46,8 @@ public class Place implements Comparable<Place> {
     public int compareTo(Place other) {
         if (other.population > this.population) {
             return 1;
-        }
-        if (other.population < this.population) {
-            return -1;
         } else {
-            return 0;
+            return -1; // Bitte diesen Hack verzeihen... Notwendig damit sich das ganze halbwegs effizient als TreeSet realisieren laesst
         }
     }
 
@@ -66,18 +63,12 @@ public class Place implements Comparable<Place> {
     }
 
 
-/*    @Override
-    public int hashCode() {
-        return population.hashCode();
-    }*/
-
     @Override
     public String toString() {
         return String.format("%s %30s %30s %5s %10d %10.3f %10.3f", countryCode, cityNameASCII, cityName, region, population, lat, lon);
     }
 
-    /* Implement Equals
- /* do i also need to implement a hash function? */
+
 
 
 }
