@@ -7,22 +7,36 @@ import java.util.*;
 /**
  * Created by hoelk on 29.06.15.
  */
-public class PlacesAnalyzer {
+public class PlacesQueryTool {
 
     static HashMap<String, String> countries;
     static HashMap<String, TreeSet<Place>> places;
     ResultSet result;
 
-    PlacesAnalyzer(String places_path, String countries_path) throws IOException {
-            places = readCsvPlaces(places_path);
-            countries = readCsvCountries(countries_path);
+    /**
+     * Custom constructor for PlacesQueryTool
+     *
+     * @param places_path    Path to places csv file
+     * @param countries_path Path to countries csv file
+     * @throws IOException Is thrown if files cannot be accessed
+     */
+    PlacesQueryTool(String places_path, String countries_path) throws IOException {
+        places = readCsvPlaces(places_path);
+        countries = readCsvCountries(countries_path);
 
     }
 
+    /**
+     * Prints n biggest places of a country, and in which other countries cities of the same name exist
+     *
+     * @param countryCode Country Code of the country of interes
+     * @param n           Number of biggest places to show
+     * @throws InvalidInputException IS thrown in case of a nonexisting country code
+     */
     public void queryPlaces(String countryCode, int n) throws InvalidInputException {
         countryCode = countryCode.toLowerCase();
 
-        if(!countries.containsKey(countryCode)){
+        if (!countries.containsKey(countryCode)) {
             System.out.println(countryCode);
             throw new InvalidInputException("Country code not found");
         }
@@ -37,9 +51,9 @@ public class PlacesAnalyzer {
         for (Place e : biggestPlaces) {
             ArrayList<String> countriesWithCity = getCountriesWithCity(e.cityName);
 
-            System.out.printf("%-30s                     %9d Ew.%n", e.cityName,  e.population);
+            System.out.printf("%-30s                     %9d Ew.%n", e.cityName, e.population);
 
-            if (countriesWithCity.size() > 1){
+            if (countriesWithCity.size() > 1) {
                 System.out.println("  Länder mit gleichnamigen Städten: ");
 
                 for (String f : countriesWithCity) {
@@ -55,7 +69,13 @@ public class PlacesAnalyzer {
         }
     }
 
-
+    /**
+     * Returns the n biggest places of a country
+     *
+     * @param countryCode Country Code of the country of interest
+     * @param n           Number of biggest places to show
+     * @return Tree set of the n biggest places of a country sorted by population size
+     */
     public TreeSet<Place> getBiggestPlaces(String countryCode, int n) {
         TreeSet<Place> placesSelect = places.get(countryCode.toLowerCase());
         TreeSet<Place> res = new TreeSet<Place>();
@@ -72,17 +92,23 @@ public class PlacesAnalyzer {
         return (res);
     }
 
+    /**
+     * Returns countries that contain a given place
+     *
+     * @param placeName Place name of interest
+     * @return Array list of countries that contain a place with placeName, sorted alphabetically
+     */
 
-    public ArrayList<String> getCountriesWithCity(String cityName) {
+    public ArrayList<String> getCountriesWithCity(String placeName) {
         ArrayList<String> res = new ArrayList<String>();
-        cityName = cityName.toLowerCase();
+        placeName = placeName.toLowerCase();
 
         for (HashMap.Entry<String, TreeSet<Place>> country : places.entrySet()) {
             String countryCode = country.getValue().first().countryCode;
             String countryName = lookupName(countryCode);
 
             for (Place e : country.getValue()) {
-                if (e.cityNameASCII.toLowerCase().equals(cityName)) {
+                if (e.cityNameASCII.toLowerCase().equals(placeName)) {
                     res.add(countryName);
                     break;
                 }
@@ -94,12 +120,25 @@ public class PlacesAnalyzer {
     }
 
 
+    /**
+     * Lookup country name based on countryCode
+     *
+     * @param countryCode country code of country of interest
+     * @return String representation of the country name
+     */
     public static String lookupName(String countryCode) {
         countryCode = countryCode.trim().toLowerCase();
         return (countries.get(countryCode));
     }
 
 
+    /**
+     * Reads the countries csv files
+     *
+     * @param path path of the countries csv file
+     * @return HashMap containing the country code / country value pairs
+     * @throws IOException
+     */
     public static HashMap<String, String> readCsvCountries(String path) throws IOException {
 
         FileInputStream istream = new FileInputStream(path);
@@ -124,7 +163,13 @@ public class PlacesAnalyzer {
 
     }
 
-
+    /**
+     * Read the places csv file
+     *
+     * @param path path to the places csv file
+     * @return Hash map containing a TreeSet of places for every countryCode
+     * @throws IOException
+     */
     public static HashMap<String, TreeSet<Place>> readCsvPlaces(String path) throws IOException {
         HashMap<String, TreeSet<Place>> places = new HashMap<String, TreeSet<Place>>();
 
